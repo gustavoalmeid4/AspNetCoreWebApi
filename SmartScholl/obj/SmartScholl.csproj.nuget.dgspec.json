@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\EstudandoAPI\\SmartScholl\\SmartScholl.csproj": {}
+    "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\EstudandoAPI\\SmartScholl\\SmartScholl.csproj": {
+    "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\EstudandoAPI\\SmartScholl\\SmartScholl.csproj",
+        "projectUniqueName": "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj",
         "projectName": "SmartScholl",
-        "projectPath": "C:\\Projetos\\EstudandoAPI\\SmartScholl\\SmartScholl.csproj",
-        "packagesPath": "C:\\Users\\Donuz\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\EstudandoAPI\\SmartScholl\\obj\\",
+        "projectPath": "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj",
+        "packagesPath": "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Donuz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\almeidaCabuloso\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -48,11 +46,11 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Microsoft.EntityFrameworkCore.sqlite": {
+            "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.0, )"
             }
@@ -75,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

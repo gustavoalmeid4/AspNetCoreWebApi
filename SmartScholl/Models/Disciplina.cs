@@ -10,12 +10,11 @@ namespace SmartScholl.Models
 
         public Disciplina() { }
 
-        public Disciplina(string nome, int id, int professorId)
+        public Disciplina(int id,string nome, int professorId)
         {
-            Nome = nome;
             Id = id;
-            ProfessorId = professorId;
-            
+            Nome = nome;
+            ProfessorId = professorId;            
         }
 
         public string Nome { get; set; }
