@@ -29,7 +29,15 @@ namespace SmartScholl
             services.AddDbContext<DataContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             ) ;
+
+            //services.AddSingleton<IRepository, Repository>();
+            //services.AddTransient<IRepository, Repository>();
+            services.AddScoped<IRepository, Repository>();
+
+
             services.AddControllers();
+
+
             
         }
 

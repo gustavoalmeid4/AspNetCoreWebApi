@@ -16,13 +16,20 @@ namespace SmartScholl.Controllers
     public class AlunoController : ControllerBase
     {
         private readonly DataContext _dataContext;
+        private readonly IRepository _repo;
 
-        public AlunoController(DataContext dataContext )
+        public AlunoController(DataContext dataContext,
+                               IRepository repo)
         {
+            _repo = repo;
             _dataContext = dataContext;
         }
 
-
+        [HttpGet("pegaResposta")]
+        public IActionResult pegaResposta()
+        {
+            return Ok(_repo.pegaResposta());
+        }
 
 
         // GET: api/<AlunoController>http://localhost:52349/api/aluno
