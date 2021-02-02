@@ -16,9 +16,13 @@ namespace SmartScholl.Controllers
     public class ProfessorController : ControllerBase
     {
         private readonly DataContext _dataContext;
-        public ProfessorController(DataContext dataContext)
+        private readonly IRepository _repo;
+
+        public ProfessorController(DataContext dataContext , 
+                                    IRepository repo)
         {
             _dataContext = dataContext;
+            _repo = repo;
         }
 
         // GET: api/<ProfessorController>
@@ -51,10 +55,13 @@ namespace SmartScholl.Controllers
         [HttpPost]
         public IActionResult Post(Professor professor)
         {
-            _dataContext.Add(professor);
-            _dataContext.SaveChanges();
-            return Ok(professor);
-
+            _repo.Add(professor);
+            if (_repo.SaveChanges())
+            {
+                return Ok(professor);
+            }
+            return BadRequest("Não foi possivel cadastrar o aluno!");
+            
         }
 
         // PUT api/<ProfessorController>/5
@@ -63,9 +70,13 @@ namespace SmartScholl.Controllers
         {
             var prof = _dataContext.Professores.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (prof == null) return BadRequest("Aluno não encontrado");
-            _dataContext.Update(prof);
-            _dataContext.SaveChanges();
-            return Ok(prof);
+
+            _repo.Update(professor);
+            if (_repo.SaveChanges())
+            {
+                return Ok($"Professor : {professor} /n cadastrado");
+            }
+            return BadRequest("Não foi possivel atualizar o aluno");
         }
 
         // DELETE api/<ProfessorController>/5
@@ -74,10 +85,14 @@ namespace SmartScholl.Controllers
         {
             var professor = _dataContext.Professores.AsNoTracking().FirstOrDefault(async => async.Id == id);
             if (professor == null) return BadRequest("Aluno não encontrado");
-            _dataContext.Remove(professor);
-            _dataContext.SaveChanges();
-            return Ok(professor);
-            
+           
+            _repo.Delete(professor);
+            if (_repo.SaveChanges())
+            {
+                return Ok($"SETA BANIDO!");
+            }
+            return BadRequest("Não foi possivel deletar o professor");
+
         }
     }
 }

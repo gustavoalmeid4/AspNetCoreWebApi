@@ -59,9 +59,12 @@ namespace SmartScholl.Controllers
         [HttpPost]
         public IActionResult Post(Aluno aluno)
         {
-            _dataContext.Add(aluno);
-            _dataContext.SaveChanges();
-            return Ok(aluno);
+            _repo.Add(aluno);
+           if( _repo.SaveChanges())
+            {
+                return Ok($"Aluno : {aluno} cadastrado");
+            }
+            return BadRequest("Não foi possivel cadastrar o aluno");
         }
 
         [HttpPut("{id}")]
@@ -69,9 +72,13 @@ namespace SmartScholl.Controllers
         {
             var al = _dataContext.Alunos.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (al == null) return BadRequest("Aluno não encontrado");
-            _dataContext.Update(aluno);
-            _dataContext.SaveChanges();
-            return Ok(aluno);
+
+            _repo.Update(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok($"Aluno : {aluno} atualizado");
+            }
+            return BadRequest("Não foi possivel atualizar o aluno");
         }
 
         [HttpPatch("{id}")]
@@ -79,19 +86,27 @@ namespace SmartScholl.Controllers
         {
             var al = _dataContext.Alunos.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (al == null) return BadRequest("Aluno não encontrado");
-            _dataContext.Update(aluno);
-            _dataContext.SaveChanges();
-            return Ok(aluno);
+
+            _repo.Update(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok($"Aluno : {aluno} atualizado");
+            }
+            return BadRequest("Não foi possivel atualizar o aluno");
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             var aluno = _dataContext.Alunos.FirstOrDefault(a => a.Id == id);
-            if (aluno == null) return BadRequest("Aluno não encontrado");               
-            _dataContext.Remove(aluno);
-            _dataContext.SaveChanges();
-            return Ok(aluno);
+            if (aluno == null) return BadRequest("Aluno não encontrado");
+
+            _repo.Delete(aluno);
+            if (_repo.SaveChanges())
+            {
+                return Ok($"Aluno : {aluno} deletado!");
+            }
+            return BadRequest("Não foi possivel atualizar o aluno");
         }
 
     }
