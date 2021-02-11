@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartScholl.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,15 @@ namespace SmartScholl.Data
         void Delete<T>(T entity) where T : class;
         bool SaveChanges();
 
+        //ALUNOS
+        Aluno[] GetAllAlunos();
+        Aluno[] GetAllAlunosByID();
+        Aluno GetAluno();
+
+        //PROFESSORES
+        Professor[] GetAllProfessores();
+        Professor[] GetAllProfessoresByID();
+        Professor GetProfessor();
 
     }
 }

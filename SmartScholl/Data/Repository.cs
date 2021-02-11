@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartScholl.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,5 +32,34 @@ namespace SmartScholl.Data
             return (_dataContext.SaveChanges() > 0 );
         }
 
+        public Aluno[] GetAllAlunos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Aluno[] GetAllAlunosByID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Aluno GetAluno()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Professor[] GetAllProfessores()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Professor[] GetAllProfessoresByID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Professor GetProfessor()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

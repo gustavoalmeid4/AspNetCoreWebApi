@@ -25,11 +25,7 @@ namespace SmartScholl.Controllers
             _dataContext = dataContext;
         }
 
-        [HttpGet("pegaResposta")]
-        public IActionResult pegaResposta()
-        {
-            return Ok(_repo.pegaResposta());
-        }
+       
 
 
         // GET: api/<AlunoController>http://localhost:52349/api/aluno
@@ -104,7 +100,7 @@ namespace SmartScholl.Controllers
             _repo.Delete(aluno);
             if (_repo.SaveChanges())
             {
-                return Ok($"Aluno : {aluno} deletado!");
+                return Ok($"Aluno : {aluno.Nome} deletado!");
             }
             return BadRequest("Não foi possivel atualizar o aluno");
         }
