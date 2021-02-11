@@ -16,6 +16,7 @@ namespace SmartScholl.Data
         //ALUNOS
         Aluno[] GetAllAlunos();
         Aluno[] GetAllAlunosByID();
+        Aluno[] GetAlunosByDisciplinaId();
         Aluno GetAluno();
 
         //PROFESSORES
