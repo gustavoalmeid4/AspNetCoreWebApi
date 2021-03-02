@@ -13,16 +13,17 @@ namespace SmartScholl.Data
         void Delete<T>(T entity) where T : class;
         bool SaveChanges();
 
-        //ALUNOS
-        Aluno[] GetAllAlunos();
-        Aluno[] GetAllAlunosByID();
-        Aluno[] GetAlunosByDisciplinaId();
-        Aluno GetAluno();
+        //alunos
+        public Aluno[] GetAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false);
+        public Aluno[] GetAllAlunos(bool includeProfessor = false);
+        public Aluno GetAlunoByID(int alunoId, bool includeProfessor = false);
 
-        //PROFESSORES
-        Professor[] GetAllProfessores();
-        Professor[] GetAllProfessoresByID();
-        Professor GetProfessor();
+        //professores
+        public Professor[] GetAllProfessoresByID(int disciplinaId, bool includeAlunos = false);
+        public Professor[] GetAllProfessores(int professorId, bool includeAluno = false);
+        public Professor GetProfessorById(int professorId, bool includeAluno = false);
+
+
 
     }
 }
