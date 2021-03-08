@@ -20,7 +20,7 @@ namespace SmartScholl.Data
 
         //professores
         public Professor[] GetAllProfessoresByID(int disciplinaId, bool includeAlunos = false);
-        public Professor[] GetAllProfessores(int professorId, bool includeAluno = false);
+        public Professor[] GetAllProfessores(bool includeAluno = false);
         public Professor GetProfessorById(int professorId, bool includeAluno = false);
 
 

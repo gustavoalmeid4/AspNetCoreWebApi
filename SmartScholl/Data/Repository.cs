@@ -100,7 +100,7 @@ namespace SmartScholl.Data
 
             return query.ToArray();
         }
-        public Professor[] GetAllProfessores(int professorId , bool includeAluno = false)
+        public Professor[] GetAllProfessores(bool includeAluno = false)
         {
             IQueryable<Professor> query = _dataContext.Professores;
 

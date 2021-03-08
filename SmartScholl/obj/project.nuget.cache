@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a5Snii1qh0035bb8nspKo4q9F3yhfFIMY9UzL/VuYAQxMgGpLxFdv8pTO4vhWHI9KX+6oZPIAip0GEnUSZ3XEw==",
+  "dgSpecHash": "Yxr1fSs+Z8F4jc9ro9ahFjB8XpqPfyxL+ElAf6/l1ESbV0zO/VDwTETGyyXMGYnaNCvn923jJpPAVYl5GvnJzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.2\\microsoft.aspnetcore.jsonpatch.3.1.2.nupkg.sha512",
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.2\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -29,6 +31,8 @@
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
