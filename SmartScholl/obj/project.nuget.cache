@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Yxr1fSs+Z8F4jc9ro9ahFjB8XpqPfyxL+ElAf6/l1ESbV0zO/VDwTETGyyXMGYnaNCvn923jJpPAVYl5GvnJzA==",
+  "dgSpecHash": "GRVe31ecRyBkOZOtm6kDy9zsrL8UcihiHpoHnfE6WQ6dmF/vZXPdlGB3iH8aQDshleNSYkWjnqTCDkJBF0U7XQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\almeidaCabuloso\\Desktop\\EstudosAPI\\AspNetCoreWebApi\\SmartScholl\\SmartScholl.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.2\\microsoft.aspnetcore.jsonpatch.3.1.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.2\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.2.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
@@ -41,6 +42,7 @@
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\almeidaCabuloso\\.nuget\\packages\\system.text.json\\4.7.0\\system.text.json.4.7.0.nupkg.sha512"
   ],
   "logs": []

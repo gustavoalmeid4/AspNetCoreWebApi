@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartScholl.Data;
+using SmartScholl.Dtos;
 using SmartScholl.Models;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,22 @@ namespace SmartScholl.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var result = _repo.GetAllAlunos(true);
-            return Ok(result);
+            var alunos = _repo.GetAllAlunos(true);
+            var alunosRetorno = new List<AlunoDto>();
+
+            foreach ( var aluno in alunos)
+            {
+                alunosRetorno.Add(new AlunoDto()
+                {
+                    Id = aluno.Id,
+                    Nome = $"{aluno.Id} {aluno.Sobrenome}",
+                    Matricula = aluno.Matricula,
+                    Telefone = aluno.Telefone,
+                    DataInicio = aluno.DataInicio,
+                    Ativo = aluno.Ativo
+                }); 
+            }
+            return Ok(alunosRetorno);
         }
 
         [HttpGet("{id}")]
