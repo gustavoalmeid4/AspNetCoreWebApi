@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartScholl.Data;
 using SmartScholl.Dtos;
@@ -17,10 +18,12 @@ namespace SmartScholl.Controllers
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
+        private readonly IMapper _mapper;
 
-        public AlunoController(IRepository repo)
+        public AlunoController(IRepository repo , IMapper mapper)
         {
             _repo = repo;
+            this._mapper = mapper;
         }
 
        
@@ -31,21 +34,8 @@ namespace SmartScholl.Controllers
         public IActionResult Get()
         {
             var alunos = _repo.GetAllAlunos(true);
-            var alunosRetorno = new List<AlunoDto>();
-
-            foreach ( var aluno in alunos)
-            {
-                alunosRetorno.Add(new AlunoDto()
-                {
-                    Id = aluno.Id,
-                    Nome = $"{aluno.Id} {aluno.Sobrenome}",
-                    Matricula = aluno.Matricula,
-                    Telefone = aluno.Telefone,
-                    DataInicio = aluno.DataInicio,
-                    Ativo = aluno.Ativo
-                }); 
-            }
-            return Ok(alunosRetorno);
+         
+            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
         [HttpGet("{id}")]

@@ -9,7 +9,7 @@ namespace SmartScholl.Models
     {
         public Aluno() { }
 
-        public Aluno(int id, int matricula, string nome, string sobrenome, string telefone,DateTime dtNascimento)
+        public Aluno(int id, int matricula, string nome, string sobrenome , string telefone, DateTime dtNascimento)
         {
             Id = id;
             Matricula = matricula;
@@ -24,6 +24,7 @@ namespace SmartScholl.Models
         public int Matricula { get; set; }
 
         public string Nome { get; set; }
+        
 
         public string Sobrenome { get; set; }
 

@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using AutoMapper;
 
 namespace SmartScholl
 {
@@ -31,16 +32,17 @@ namespace SmartScholl
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             ) ;
 
-            //services.AddSingleton<IRepository, Repository>();
-            //services.AddTransient<IRepository, Repository>();
-            services.AddScoped<IRepository, Repository>();
-
-
             services.AddControllers()
                 .AddNewtonsoftJson(
                 opt => opt.SerializerSettings.ReferenceLoopHandling =
                     Newtonsoft.Json.ReferenceLoopHandling.Ignore
                 );
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            services.AddScoped<IRepository, Repository>();
+          
+
 
 
 

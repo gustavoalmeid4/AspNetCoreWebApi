@@ -1,0 +1,5 @@
+C:\Users\almeidaCabuloso\Desktop\EstudosAPI\AspNetCoreWebApi\SmartScholl\obj\Debug\netcoreapp3.1\SmartScholl - Backup.csprojAssemblyReference.cache
+C:\Users\almeidaCabuloso\Desktop\EstudosAPI\AspNetCoreWebApi\SmartScholl\obj\Debug\netcoreapp3.1\SmartScholl - Backup.AssemblyInfoInputs.cache
+C:\Users\almeidaCabuloso\Desktop\EstudosAPI\AspNetCoreWebApi\SmartScholl\obj\Debug\netcoreapp3.1\SmartScholl - Backup.AssemblyInfo.cs
+C:\Users\almeidaCabuloso\Desktop\EstudosAPI\AspNetCoreWebApi\SmartScholl\obj\Debug\netcoreapp3.1\SmartScholl - Backup.csproj.CoreCompileInputs.cache
+C:\Users\almeidaCabuloso\Desktop\EstudosAPI\AspNetCoreWebApi\SmartScholl\obj\Debug\netcoreapp3.1\SmartScholl - Backup.MvcApplicationPartsAssemblyInfo.cache
