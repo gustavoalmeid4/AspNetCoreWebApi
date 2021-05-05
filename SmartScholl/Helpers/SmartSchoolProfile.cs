@@ -22,6 +22,9 @@ namespace SmartScholl.Helpers
                     opt => opt.MapFrom( src => src.DataNascimento.getCurrentAge())
                 )
                 ;
+
+            CreateMap<AlunoDto, Aluno>();
+
         }
     }
 }

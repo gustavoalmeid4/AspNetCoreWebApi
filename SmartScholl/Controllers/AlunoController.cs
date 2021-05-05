@@ -43,46 +43,52 @@ namespace SmartScholl.Controllers
         {
             var aluno = _repo.GetAlunoByID(id, false);
             if (aluno == null) return BadRequest("O Aluno não foi encontrado.");
-            return Ok(aluno);
+
+            var alunoDto = _mapper.Map<AlunoDto>(aluno);
+            return Ok(alunoDto);
         }
 
 
         [HttpPost]
-        public IActionResult Post(Aluno aluno)
+        public IActionResult Post(AlunoDto model)
         {
+
+            var aluno = _mapper.Map<Aluno>(model);
             _repo.Add(aluno);
            if( _repo.SaveChanges())
             {
-                return Ok($"Aluno : {aluno} cadastrado");
+                return Created($"/api/aluno/{model.Id} ", _mapper.Map<AlunoDto>(aluno));
             }
             return BadRequest("Não foi possivel cadastrar o aluno");
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id ,Aluno aluno)
+        public IActionResult Put(int id ,AlunoDto model)
         {
-            var al = _repo.GetAlunoByID(id, false);
-            if (al == null) return BadRequest("Aluno não encontrado");
+            var aluno = _repo.GetAlunoByID(id, false);
+            if (aluno == null) return BadRequest("Aluno não encontrado");
+
+            _mapper.Map(model , aluno);
 
             _repo.Update(aluno);
             if (_repo.SaveChanges())
             {
-                return Ok($"Aluno : {aluno} atualizado");
+                return Created($"/api/aluno/{model.Id} ", _mapper.Map<AlunoDto>(aluno));
             }
             return BadRequest("Não foi possivel atualizar o aluno");
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, Aluno aluno)
+        public IActionResult Patch(int id, AlunoDto model)
         {
-            var al = _repo.GetAlunoByID(id, false);
-            if (al == null) return BadRequest("Aluno não encontrado");
+            var aluno = _repo.GetAlunoByID(id);
+            if (aluno == null) return BadRequest("Aluno não encontrado");
 
             _repo.Update(aluno);
             if (_repo.SaveChanges())
             {
-                return Ok($"Aluno : {aluno} atualizado");
-            }
+                return Created($"/api/aluno/{model.Id} ", _mapper.Map<AlunoDto>(aluno));
+            } 
             return BadRequest("Não foi possivel atualizar o aluno");
         }
 
