@@ -38,6 +38,12 @@ namespace SmartScholl.Controllers
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
+        [HttpGet("getRegister")]
+        public IActionResult GetRegister()
+        {
+            return Ok(new AlunoRegistrarDto());
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -50,7 +56,7 @@ namespace SmartScholl.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(AlunoDto model)
+        public IActionResult Post(AlunoRegistrarDto model)
         {
 
             var aluno = _mapper.Map<Aluno>(model);
@@ -63,7 +69,7 @@ namespace SmartScholl.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id ,AlunoDto model)
+        public IActionResult Put(int id , AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoByID(id, false);
             if (aluno == null) return BadRequest("Aluno não encontrado");
@@ -79,7 +85,7 @@ namespace SmartScholl.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, AlunoDto model)
+        public IActionResult Patch(int id, AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoByID(id);
             if (aluno == null) return BadRequest("Aluno não encontrado");

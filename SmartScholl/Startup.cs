@@ -41,6 +41,19 @@ namespace SmartScholl
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
             services.AddScoped<IRepository, Repository>();
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc(
+                    "almeidaAPI",
+                    new Microsoft.OpenApi.Models.OpenApiInfo()
+                    {
+                        Title  = "Almeida API " ,
+                        Version = "Master 1.0",
+                        
+                    }
+                    );  
+            });
           
 
 
@@ -64,6 +77,15 @@ namespace SmartScholl
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger()
+                .UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/almeidaAPI/swagger.json", "almeidaAPI");
+                    options.RoutePrefix = "";
+                });
+
+
         }
     }
 }

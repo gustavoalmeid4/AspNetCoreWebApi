@@ -24,6 +24,7 @@ namespace SmartScholl.Helpers
                 ;
 
             CreateMap<AlunoDto, Aluno>();
+            CreateMap<Aluno, AlunoRegistrarDto>().ReverseMap();
 
         }
     }
