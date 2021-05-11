@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using AutoMapper;
+using System.Reflection;
+using System.IO;
 
 namespace SmartScholl
 {
@@ -30,7 +32,7 @@ namespace SmartScholl
         {
             services.AddDbContext<DataContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
-            ) ;
+            );
 
             services.AddControllers()
                 .AddNewtonsoftJson(
@@ -42,6 +44,19 @@ namespace SmartScholl
             
             services.AddScoped<IRepository, Repository>();
 
+            services.AddVersionedApiExplorer(options =>
+           {
+               options.GroupNameFormat = "'v'VVVV";
+               options.SubstituteApiVersionInUrl = true;
+           })
+           .AddApiVersioning(options =>
+           {
+               options.AssumeDefaultVersionWhenUnspecified = true;
+               options.DefaultApiVersion = new ApiVersion(1,0);
+               options.ReportApiVersions = true;
+           });     
+           ;
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(
@@ -51,8 +66,12 @@ namespace SmartScholl
                         Title  = "Almeida API " ,
                         Version = "Master 1.0",
                         
-                    }
-                    );  
+                    });
+
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+
+                options.IncludeXmlComments(xmlCommentsFullPath);
             });
           
 

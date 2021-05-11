@@ -13,8 +13,14 @@ using System.Threading.Tasks;
 
 namespace SmartScholl.Controllers
 {
-    [Route("api/[controller]")]
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    [ApiVersion("1.0")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
@@ -27,7 +33,10 @@ namespace SmartScholl.Controllers
         }
 
        
-
+        /// <summary>
+        /// Método responsavel para retornar todos os meus alunos.
+        /// </summary>
+        /// <returns></returns>
 
         // GET: api/<AlunoController>http://localhost:52349/api/aluno
         [HttpGet]
@@ -38,12 +47,21 @@ namespace SmartScholl.Controllers
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
+        /// <summary>
+        /// Método responsavel por retornar apenas um  unico aluno alunoDTO.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("getRegister")]
         public IActionResult GetRegister()
         {
             return Ok(new AlunoRegistrarDto());
         }
 
+        /// <summary>
+        /// Método responsavel por retornar apenas um aluno unico por meio do ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -54,7 +72,11 @@ namespace SmartScholl.Controllers
             return Ok(alunoDto);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(AlunoRegistrarDto model)
         {
@@ -68,6 +90,12 @@ namespace SmartScholl.Controllers
             return BadRequest("Não foi possivel cadastrar o aluno");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id , AlunoRegistrarDto model)
         {
@@ -84,6 +112,12 @@ namespace SmartScholl.Controllers
             return BadRequest("Não foi possivel atualizar o aluno");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, AlunoRegistrarDto model)
         {
@@ -98,6 +132,11 @@ namespace SmartScholl.Controllers
             return BadRequest("Não foi possivel atualizar o aluno");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
